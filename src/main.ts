@@ -85,6 +85,7 @@ function createPrompt(file: File, chunk: Chunk, prDetails: PRDetails): string {
 - Provide comments and suggestions ONLY if there is something to improve, otherwise "reviews" should be an empty array.
 - Write the comment in GitHub Markdown format.
 - Use the given description only for the overall context and only comment the code.
+- Suggestions for verifying memory leaks and writing more concise and testable code for iOS Swift, Objective-C, and RxSwift.
 - IMPORTANT: NEVER suggest adding comments to the code.
 
 Review the following code diff in the file "${
