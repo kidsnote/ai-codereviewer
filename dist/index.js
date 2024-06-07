@@ -158,7 +158,8 @@ function getAIResponse(prompt) {
             return JSON.parse(res).reviews;
         }
         catch (error) {
-            console.error("Error:", error);
+            console.error("Error1:", error);
+            console.error("res:", res);
             return null;
         }
     });
@@ -232,7 +233,7 @@ function main() {
     });
 }
 main().catch((error) => {
-    console.error("Error:", error);
+    console.error("Error2:", error);
     process.exit(1);
 });
 
