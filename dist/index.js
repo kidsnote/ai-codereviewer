@@ -159,7 +159,7 @@ function getAIResponse(prompt) {
         }
         catch (error) {
             console.error("Error1:", error);
-            console.error("res:", res);
+            console.error("response:", response);
             return null;
         }
     });
