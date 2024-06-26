@@ -87,6 +87,8 @@ function createPrompt(file: File, chunk: Chunk, prDetails: PRDetails): string {
 - Use the given description only for the overall context and only comment the code.
 - IMPORTANT: NEVER suggest adding comments to the code.
 
+${core.getInput("prompt") || ''}
+
 Review the following code diff in the file "${
     file.to
   }" and take the pull request title and description into account when writing the response.
@@ -189,6 +191,12 @@ async function main() {
   );
 
   if (eventData.action === "opened") {
+    diff = await getDiff(
+      prDetails.owner,
+      prDetails.repo,
+      prDetails.pull_number
+    );
+  } else if (eventData.action === "review_requested") {
     diff = await getDiff(
       prDetails.owner,
       prDetails.repo,
